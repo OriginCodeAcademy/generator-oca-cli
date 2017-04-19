@@ -1,6 +1,6 @@
 {
   "name": "oca-cli",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "CLI tool to be used by students at Origin Code Academy to generate starter kits for projects",
   "main": "oca.js",
   "scripts": {
