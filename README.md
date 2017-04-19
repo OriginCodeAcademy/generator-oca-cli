@@ -7,7 +7,7 @@ CLI tool for starting, testing and publishing OCA assignments all in the termina
 Install [NodeJS](https://nodejs.org), then open up a terminal and run the following command.
 
 ```
-npm install -g oca-cli yo
+npm install -g oca-cli
 ```
 
 ## Starting projects

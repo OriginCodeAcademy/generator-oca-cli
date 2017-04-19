@@ -5,7 +5,7 @@
   "main": "oca.js",
   "scripts": {
     "test": "mocha",
-    "start": "node oca.js"
+    "start": "node ./lib/oca-cli.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/origincodeacademy/oca-cli#readme",
   "bin": {
-    "oca-cli": "./oca.js"
+    "oca-cli": "./lib/oca-cli.js"
   },
   "engines": {
     "node": ">=4"
