@@ -17,6 +17,9 @@
     "url": "https://github.com/origincodeacademy/oca-cli/issues"
   },
   "homepage": "https://github.com/origincodeacademy/oca-cli#readme",
+  "bin": {
+    "oca-cli": "./oca.js"
+  },
   "dependencies": {
     "commander": "^2.9.0",
     "yeoman-environment": "^1.6.6",
