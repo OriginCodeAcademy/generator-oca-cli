@@ -21,5 +21,6 @@
     "commander": "^2.9.0",
     "yeoman-environment": "^1.6.6",
     "yeoman-generator": "^1.1.1"
-  }
+  },
+  "preferGlobal": true
 }
