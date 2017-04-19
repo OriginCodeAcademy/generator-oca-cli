@@ -2,9 +2,13 @@ var window;
 
 const serialDoc = require("jsdom").serializeDocument;
 const fs = require('fs');
-const userHTML = fs.readFileSync(require.resolve("../index.html"), {encoding: "utf-8"});
+const userHTML = stripScripts(fs.readFileSync(require.resolve("../index.html"), {encoding: "utf-8"}));
 const userScript = fs.readFileSync(require.resolve("../main.js"), {encoding: "utf-8"});
 const jsdom = require("jsdom");
+
+function stripScripts(input) {
+  return input.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+}
 
 // create an event emitter for log and error events
 const virtualConsole = jsdom.createVirtualConsole();
@@ -22,12 +26,14 @@ virtualConsole.on("error", function(message) {
 
 function loadWindow() {
   const document = jsdom.jsdom(userHTML, {virtualConsole});
+  
   window = document.defaultView;
   const scriptEl = document.createElement("script");
   scriptEl.textContent = userScript;
   document
     .body
     .appendChild(scriptEl);
+
   return window;
 }
 

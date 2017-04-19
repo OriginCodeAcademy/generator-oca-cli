@@ -81,12 +81,12 @@ describe('AstroWeight Calculator', () => {
     });
 
     it('should bind click event to handleClickEvent', () => {
-      const actualLength = $('#calculateWeight')
-        .data('events')
-        .filter(x => x.toString() === 'handleClickEvent')
-        .length;
-
-      should.equal(actualLength, 1);
+      window.eval(`
+        // This code executes in the jsdom global scope
+        calculateWeightButton_testElement = document.getElementById('calculateWeight');
+      `);
+      const element = window.calculateWeightButton_testElement;
+      should.exist(element.onclick);
     });
 
     it('should contain an array of planets', () => {
@@ -99,13 +99,11 @@ describe('AstroWeight Calculator', () => {
 
   describe('Integration', () => {
     it('should print valid output', (done) => {
-      setTimeout(function() {
-        $("#planetList option[value='0.06']").attr('selected', 'selected');
-        $("#weight").val(100);
-        $("#calculate").click();
-        should.equal($("#output").text(), 'If you were on Pluto, you would weigh 6 pounds!');
-        done();
-      }, 100);
+      $("#planets option[value='0.06']").attr('selected', 'selected');
+      $("#userWeight").val(100);
+      $("#calculateWeight").click();
+      should.equal($("#output").text(), 'If you were on Pluto, you would weigh 6 pounds!');
+      done();
     });
   });
 });
