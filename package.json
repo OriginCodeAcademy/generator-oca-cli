@@ -1,0 +1,25 @@
+{
+  "name": "oca-cli",
+  "version": "0.9.0",
+  "description": "CLI tool to be used by students at Origin Code Academy to generate starter kits for projects",
+  "main": "oca.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node oca.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/origincodeacademy/oca-cli.git"
+  },
+  "author": "Cameron Wilby <cameron@origincodeacademy.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/origincodeacademy/oca-cli/issues"
+  },
+  "homepage": "https://github.com/origincodeacademy/oca-cli#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "yeoman-environment": "^1.6.6",
+    "yeoman-generator": "^1.1.1"
+  }
+}
