@@ -20,6 +20,9 @@
   "bin": {
     "oca-cli": "./oca.js"
   },
+  "engines": {
+    "node": ">=4"
+  },
   "dependencies": {
     "commander": "^2.9.0",
     "yeoman-environment": "^1.6.6",
