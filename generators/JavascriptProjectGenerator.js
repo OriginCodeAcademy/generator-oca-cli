@@ -20,4 +20,11 @@ module.exports = (generatorName) => class extends Generator {
 
         this.npmInstall();
     }
+
+    end() {
+        console.log('\nProject successfully generated!\n');
+        console.log('We suggest you begin by typing:')
+        console.log(`  \x1b[44m%s\x1b[0m ${this.options.folderName || generatorName}`, 'cd')
+        console.log(`  \x1b[44m%s\x1b[0m`, 'npm test\n')
+    }
 }
