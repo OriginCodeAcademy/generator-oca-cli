@@ -21,9 +21,3 @@ This will create a folder within the current terminal directory containing start
 `oca-cli test`
 
 This will run tests for the current project to help guide development and gauge your progress toward completion.
-
-## Submitting projects
-
-`oca-cli submit`
-
-This will attempt to submit the current project. If all tests pass your project will be submitted and you can begin the next assignment.
