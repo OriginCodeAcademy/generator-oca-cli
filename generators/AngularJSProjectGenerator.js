@@ -20,6 +20,7 @@ module.exports = (generatorName) => class extends Generator {
         process.chdir(this.destinationPath(this.options.folderName || generatorName));
 
         this.npmInstall();
+        this.bowerInstall();
     }
 
     end() {

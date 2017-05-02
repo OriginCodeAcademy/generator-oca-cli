@@ -1,0 +1,1 @@
+module.exports = require('../AngularJSProjectGenerator')('angular-weather-app');
