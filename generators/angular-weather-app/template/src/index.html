@@ -62,45 +62,45 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-8">
-					<div class="alert alert-info animated fadeIn" ng-hide="weatherCtrl.weatherData">
+					<div class="alert alert-info animated fadeIn" ng-hide="weatherCtrl.forecast">
 						<strong>Welcome!</strong> Search for a city on the left to see results.
 					</div>
 					<div class="alert alert-info animated fadeIn" ng-show="weatherCtrl.loading">Loading your data now..</div>
-					<div class="panel text-center panel-success animated fadeIn" ng-hide="!weatherCtrl.weatherData || weatherCtrl.loading">
+					<div class="panel text-center panel-success animated fadeIn" ng-hide="!weatherCtrl.forecast || weatherCtrl.loading">
 						<div class="panel-heading">
-							Weather for {{weatherCtrl.weatherData.name}}
+							Weather for {{weatherCtrl.forecast.name}}
 						</div>
 						<div class="panel-body no-padding">
-							<img ng-src="http://openweathermap.org/img/w/{{weatherCtrl.weatherData.weather[0].icon}}.png" alt="">
-							<h4 style="display: inline">{{weatherCtrl.weatherData.weather[0].main}}</p>
+							<img ng-src="http://openweathermap.org/img/w/{{weatherCtrl.forecast.weather[0].icon}}.png" alt="">
+							<h4 style="display: inline">{{weatherCtrl.forecast.weather[0].main}}</p>
 							<hr>
 							<div class="row text-center">
 								<div class="col-xs-4">
 									<strong>Temperature (F)</strong>
-									<h4 class="text-success">{{weatherCtrl.weatherData.main.temp}}F</h4>
+									<h4 class="text-success">{{weatherCtrl.forecast.main.temp}}F</h4>
 								</div>
 								<div class="col-xs-4">
 									<strong>Pressure</strong>
-									<h4 class="text-success">{{weatherCtrl.weatherData.main.pressure}}</h4>
+									<h4 class="text-success">{{weatherCtrl.forecast.main.pressure}}</h4>
 								</div>
 								<div class="col-xs-4">
 									<strong>Humidity</strong>
-									<h4 class="text-success">{{weatherCtrl.weatherData.main.humidity}}%</h4>
+									<h4 class="text-success">{{weatherCtrl.forecast.main.humidity}}%</h4>
 								</div>
 							</div>
 							<hr>
 							<div class="row text-center">
 								<div class="col-xs-4">
 									<strong>Lowest Temp (F)</strong>
-									<h4 class="text-success">{{weatherCtrl.weatherData.main.temp_min}}F</h4>
+									<h4 class="text-success">{{weatherCtrl.forecast.main.temp_min}}F</h4>
 								</div>
 								<div class="col-xs-4">
 									<strong>Highest Temp (F)</strong>
-									<h4 class="text-success">{{weatherCtrl.weatherData.main.temp_max}}F</h4>
+									<h4 class="text-success">{{weatherCtrl.forecast.main.temp_max}}F</h4>
 								</div>
 								<div class="col-xs-4">
 									<strong>Wind Speed</strong>
-									<h4 class="text-success">{{weatherCtrl.weatherData.wind.speed}}mph, {{weatherCtrl.weatherData.wind.deg}}deg</h4>
+									<h4 class="text-success">{{weatherCtrl.forecast.wind.speed}}mph, {{weatherCtrl.forecast.wind.deg}}deg</h4>
 								</div>
 							</div>
 						</div>

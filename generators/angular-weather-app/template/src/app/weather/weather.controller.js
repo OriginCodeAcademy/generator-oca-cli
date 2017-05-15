@@ -5,9 +5,9 @@
         .module('app')
         .controller('WeatherController', WeatherController)
 
-    WeatherController.$inject = ['$http'];
+    WeatherController.$inject = ['weatherFactory', 'toastr'];
 
-    function WeatherController($http) {
+    function WeatherController(weatherFactory, toastr) {
         var vm = this;
 
         vm.searches = [];
@@ -18,17 +18,18 @@
         ///////////
 
         function getWeather(city) {
-            vm.loading = true;
-
-            $http
-                .get('http://api.openweathermap.org/data/2.5/weather?apikey=041b9d493799dcd6d6974147dbcb75e4&units=imperial&q=' + city)
-                .then(function(response) {
-                    vm.weatherData = response.data;
+            weatherFactory
+                .getWeatherForCity(city)
+                .then(function(data) {
+                    vm.forecast = data;
                     vm.searches.push({
                         timestamp: new Date(),
-                        name: vm.weatherData.name
+                        name: data.name
                     });
-                    vm.loading = false;
+                    toastr.success('Downloaded weather for ' + city, 'Success');
+                })
+                .catch(function(err) {
+                    toastr.error('Weather for ' + city + ' could not be found', 'Error');
                 });
         }
     }
