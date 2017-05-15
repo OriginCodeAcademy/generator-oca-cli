@@ -1,0 +1,30 @@
+{
+  "name": "angular-weather-app",
+  "description": "Weather application built using the Open Weather Map API and AngularJS",
+  "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7",
+    "animate.css": "^3.5.2",
+    "angular-toastr": "^2.1.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.6.4",
+    "bardjs": "^0.1.10"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
